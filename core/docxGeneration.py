@@ -18,7 +18,9 @@ def generate_docx(fillData, questionsData):
     sections.left_margin = Cm(1.0)
     sections.right_margin = Cm(1.0)
 
-    #Cabeçalho da prova
+    # ====
+    #   Tabela de cabeçalho
+    # ====
     table = doc.add_table(rows=7,cols=3)
     table.alignment = WD_ALIGN_PARAGRAPH.CENTER
     table.style = "Table Grid"
@@ -94,8 +96,11 @@ def generate_docx(fillData, questionsData):
             fillData['Class'],          #Turma
             '']                         #Estudante
 
-    print('AQUI')
-
+    
+    # ====
+    #   Gera as tabelas com as questoes
+    # ====
+    
     for i, key in enumerate(data.keys()):
         cell = data[key]                            # mantém a célula original
         cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
@@ -172,6 +177,8 @@ def set_cell_background(cell, color):
     shd.set(qn('w:fill'), color)
     tcPr.append(shd)
 
+
+'''
 data = {'Instructor': 'João Bornelli',
         'Course': 'Técnico em Informática',
         'Course_Unit': 'Desenvolvimento de Sistemas',
@@ -179,3 +186,4 @@ data = {'Instructor': 'João Bornelli',
         }
 
 generate_docx(data,[])
+'''
