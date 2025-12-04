@@ -94,7 +94,7 @@ def home_view(request):
                     missing = fields - question.keys()
                     print(f"questão {idx}>>>> {question}")
                     print(missing)
-
+                    
                     for field in missing:
                         error.append(f'Campo obrigatório "{field}" ausente na questão {idx}.')
 
