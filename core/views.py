@@ -76,11 +76,11 @@ def home_view(request):
         if error:
             return render(request, 'home.html', {'error': error})
 
-        print(receivedFile[0])
+        print("receivedFile>>>>",receivedFile[0])
         # File Data Validation (JSON LISTA)
         try:
             jsonData = json.load(receivedFile)   # Arquivo inteiro carregado
-
+            print("jsonData >>>>", jsonData)
             if not isinstance(jsonData, list):
                 error.append('O arquivo deve ser uma lista de questões em formato JSON.')
 
