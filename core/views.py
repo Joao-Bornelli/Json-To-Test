@@ -108,8 +108,8 @@ def home_view(request):
                     if len(alts) < 3:
                         error.append(f'A questão {idx} deve conter pelo menos 3 alternativas.')
 
-                    if len(alts) > 4:
-                        error.append(f'A questão {idx} deve conter no máximo 4 alternativas.')
+                    if len(alts) > 5:
+                        error.append(f'A questão {idx} deve conter no máximo 5 alternativas.')
 
                     for alt in alts:
                         if alt.get('texto', '').strip() == '':
