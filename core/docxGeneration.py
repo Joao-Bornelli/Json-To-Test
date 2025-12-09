@@ -8,7 +8,7 @@ from docx.oxml.ns import qn
 
 from io import BytesIO
 
-import json
+import random
 
 def generate_docx(fillData, questionsData):
     
@@ -118,6 +118,11 @@ def generate_docx(fillData, questionsData):
     
     spacer = mainDoc.add_paragraph()
     spacer.paragraph_format.space_after = Pt(12)
+    
+    
+    for question in questionsData:
+        random.shuffle(question["Alternativas"])
+        
     
     for i, question in enumerate(questionsData):
         
